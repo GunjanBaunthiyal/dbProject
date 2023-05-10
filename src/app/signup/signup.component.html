@@ -1,0 +1,117 @@
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()"
+                novalidate
+                [appMatchPassword]="['password', 'confirmPassword']"
+                >
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input 
+                      type="text" 
+                      class="form-control" name="firstName" 
+                      [ngClass]="{'isInvalid':f.submitted && firstName.errors}"
+                      required 
+                      [(ngModel)]="form.firstName" #firstName="ngModel">
+                    <div *ngIf="f.submitted && firstName.errors" class="validationMsg">
+                      <div *ngIf="firstName.errors['required']">
+                          First Name is required
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" [ngClass]="{'isInvalid':f.submitted && lastName.errors}"
+                    required [(ngModel)]="form.lastName" #lastName="ngModel">
+                    <div *ngIf="f.submitted && lastName.errors" class="validationMsg">
+                      <div *ngIf="lastName.errors['required']">
+                          Last Name is required
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                      type="email" 
+                      class="form-control" 
+                      name="email" 
+                      [ngClass]="{'isInvalid':f.submitted && email.errors}"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                      required 
+                      [(ngModel)]="form.email" #email="ngModel">
+                    <div *ngIf="f.submitted && email.errors" class="validationMsg">
+                      <div *ngIf="email.errors['required']">
+                          Email is required
+                      </div>
+                      <div *ngIf="email.errors['pattern']">
+                           Email is invalid
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input 
+                      type="tel" 
+                      class="form-control" 
+                      name="contact" 
+                      [ngClass]="{'isInvalid':f.submitted && contact.errors}"
+                      required 
+                      [(ngModel)]="form.contact" #contact="ngModel" 
+                      pattern="[1-9]{1}[0-9]{8}">
+                    <div *ngIf="f.submitted && contact.errors" class="validationMsg">
+                      <div *ngIf="contact.errors['required']">
+                          Phone number is required
+                      </div>
+                      <div *ngIf="contact.errors['pattern']">
+                           Phone number is invalid
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" [ngClass]="{'isInvalid':f.submitted && password.errors}"
+                    minlength="6"
+                    required [(ngModel)]="form.password" #password="ngModel">
+                    <div *ngIf="f.submitted && password.errors" class="validationMsg">
+                      <div *ngIf="password.errors['required']">
+                          Password is required
+                      </div>
+                      <div *ngIf="password.errors['minlength']">
+                          Password should be minimum 6 characters
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirmPassword" [ngClass]="{'isInvalid':f.submitted && confirmPassword.errors}"
+                    minlength="6"
+                    required [(ngModel)]="form.confirmPassword" #confirmPassword="ngModel">
+                    <div *ngIf="f.submitted && confirmPassword.errors" class="validationMsg">
+                      <div *ngIf="confirmPassword.errors['required']">
+                          Confirm Password is required
+                      </div>
+                      <div *ngIf="confirmPassword.errors['minlength']">
+                           Password should be minimum 6 characters
+                      </div>
+                      <div *ngIf="confirmPassword.errors['matching']">
+                        Confirm Password does not match
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mt-2 text-center">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                  </div>
+                  <p class="text-center text-muted mt-5 mb-0">Already have an account? <a href="/signin" class="fw-bold text-body"><u>Login here</u></a></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+// .imgdiv{
+//     background: url('../../assets/images/home-bg.jpg');
+// }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.brand-logo{
+    max-width: 100px;
+    height:70px;
+}
+
+.main-btn{
+    float: right;
+    margin-top: 20px;
+    margin: 1em;
+    padding: 0.5em;
+
+}
+
+.section-main{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-btn{
+    margin-top: 100px ;
+    margin-left: 450px;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    list-style-type: none;
+}
+ul li{
+    display: inline;
+    padding: 1em;
+    border: 1px solid;
+    margin:1em;
+    text-decoration: none;
+}
+
+.section-btn ul li a:hover{
+    border: 1px solid;
+    background: transparent;
+}

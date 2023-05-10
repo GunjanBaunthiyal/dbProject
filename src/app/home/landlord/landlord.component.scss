@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.brand-logo{
+    max-width: 100px;
+    height:70px;
+}
+
+.main-btn{
+    float: right;
+    margin-top: 20px;
+    margin: 1em;
+    padding: 0.5em;
+
+}
+
+hr{
+    border-bottom: 1px solid #1f1209;
+    box-shadow: 0 20px 20px -20px #333;
+}
+.addbtn{
+    margin-top: 20px;
+    display: grid;
+    place-items: center;
+
+}
+
+.addbtn button{
+    border:1px solid #1f1209;
+    width:auto;
+    max-height:150px;
+    padding: 0.8rem;
+    margin: 0.8rem;
+}

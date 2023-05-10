@@ -1,0 +1,23 @@
+<main>
+    <header class="brand-name">
+      <img class="brand-logo" src="../../assets/images/logo.png" alt="logo" aria-hidden="true">
+      <button type="button" class="main-btn">Logout
+    </button>
+   <button type="button" class="main-btn">My Profile
+   </button>
+    <button type="button" class="main-btn">Homepage
+    </button>
+    </header>
+    <section>
+        <div class="section-main">
+           <h3>Welcome, username extracted from database</h3>
+        </div>
+        <div>
+            <ul class="section-btn">
+                <li><a href="/landlord"></a>LANDLORD</li>
+                <li><a href="/tenant"></a>TENANT</li>
+            </ul>
+        </div>
+        <router-outlet></router-outlet>
+</section>
+</main>
